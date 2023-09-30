@@ -1,104 +1,22 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Croissant+One&display=swap" rel="stylesheet">
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style type="text/css">
-    @keyframes rotate {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    .gradient {
-      --size: 250px;
-      --speed: 50s;
-      --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
-      width: var(--size);
-      height: var(--size);
-      filter: blur(calc(var(--size) / 5));
-      background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(2, 1, 731, 0.308));
-      /* background-image: linear-gradient(rgba(0, 0, 0, 0.308), RGB(2, 1, 731)); */
-      animation: rotate var(--speed) var(--easing) alternate infinite;
-      border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
-      background: rgb(73 73 87 / 31%);
-      position: absolute;
-
-    }
-
-    @media (min-width: 720px) {
-      .gradient {
-        --size: 500px;
-      }
-    }
-
-    body {
-      background-color: #222;
-      position: absolute;
-      inset: 0;
-      display: flex;
-      place-content: center;
-      align-items: center;
-      overflow: hidden;
-      position: relative;
-    }
-    html, body{
-      height: 100%;
-    }
-
-    /* This is just to transition when you change the viewport size. */
-    * {
-      /* font-family: 'Croissant One', cursive; */
-      font-family: 'Rubik', sans-serif;
-      /* font-family: 'Poppins', sans-serif; */
-      transition: all 0.25s ease-out;
-      color: white;
-    }
-  </style>
-</head>
-
-<body class="relative">
-  <div class="absolute top-0 left-0 h-full w-full">
-    <div class="relative h-full w-full">
-      <div class="gradient top-1/4 md:top-1/5 lg:top-0"></div>
-      <div class="absolute top-1/2 -translate-y-1/2 w-full text-center">
-        <div class="inline-block">
-          <p class="uppercase text-sm font-light pl-20 text-left text-zinc-400 tracking-wider">I am</p>
-          <!-- <h1 class="text-7xl uppercase font-black text-left mt-4">Romik</h1>
-          <h1 class="text-7xl uppercase font-black text-left mb-4">Makavana</h1> -->
-          <h1 class="uppercase bg-transparent font-black text-7xl md:text-8xl lg:text-9xl" id="displayName">Romik</h1>
-          <!-- <input class="uppercase outline-none bg-transparent font-black text-7xl md:text-8xl lg:text-9xl w-full" id="displayName" value="Romik"> -->
-          <p class="uppercase text-sm font-light pl-0 md:pl-[50%] text-right md:text-left text-zinc-400 tracking-wider">web developer</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    let a = new URLSearchParams(window.location.search)
-    let name = a.get('name');
-    if(!name){
-      name = "Romik"
-    }
-    document.getElementById('displayName').innerText = name;
-  </script>
-</body>
-
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&display=swap" rel="stylesheet">
+  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&display=swap" rel="stylesheet">
+  
+  </head>
+  <body class="body">
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

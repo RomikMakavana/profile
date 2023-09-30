@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+  body, *{
+    @apply text-base font-light tracking-wider uppercase;
+  }
+  #app {
+    @apply h-full;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.gradient {
+  --size: 500px;
+  --speed: 50s;
+  --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+  width: var(--size);
+  height: var(--size);
+  filter: blur(calc(var(--size) / 5));
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(2, 1, 731, 0.308));
+  transform: scale(1.5);
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.308), RGB(2, 1, 731)); */
+  animation: rotate var(--speed) var(--easing) alternate infinite;
+  border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+  background: rgb(255 255 255 / 5%);
+  /* background: rgb(73 73 87 / 31%); */
+  /* position: absolute; */
+}
+
+@media (min-width: 720px) {
+  .gradient {
+    --size: 600px;
+  }
+}
+
+body {
+  background-color: #222;
+  position: absolute;
+  inset: 0;
+  place-content: center;
+  align-items: center;
+  position: relative;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* This is just to transition when you change the viewport size. */
+* {
+  /* font-family: 'Croissant One', cursive; */
+  font-family: 'Rubik', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+
+  /* font-family: "Cera CY Bold"; */
+  transition: all 0.25s ease-out;
+  color: white;
+}
+
+@font-face {
+  font-family: "Cera CY Bold";
+  src: url("@/assets/fonts/cera/6a28a1fb5b77054a12626d0c23c92aa2.eot");
+  src: url("@/assets/fonts/cera/6a28a1fb5b77054a12626d0c23c92aa2.eot")format("embedded-opentype"),
+    url("@/assets/fonts/cera/6a28a1fb5b77054a12626d0c23c92aa2.woff2")format("woff2"),
+    url("@/assets/fonts/cera/6a28a1fb5b77054a12626d0c23c92aa2.woff")format("woff"),
+    url("@/assets/fonts/cera/6a28a1fb5b77054a12626d0c23c92aa2.ttf")format("truetype"),
+    url("@/assets/fonts/cera/6a28a1fb5b77054a12626d0c23c92aa2.svg#Cera CY Bold")format("svg");
+}
